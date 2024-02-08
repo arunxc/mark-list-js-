@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark list</title>
+    <link rel="stylesheet" href="Mark list.css">
+     
+</head>
+<body>
+<div class="container">
+        <label id="name">Name : </label>
+        <input id="inp" type="text"><br><br>
+
+        <label id="email"> Email : </label>
+        <input id="inp1" type="email"><br><br>
+
+        <label id="tam">Tamil : </label>
+        <input id="inp2" type="number"><br><br>
+
+        <label id="eng">English : </label>
+        <input id="inp3" type="number"><br><br>
+
+        <label id="mat">Maths : </label>
+        <input id="inp4" type="number"><br><br>
+
+        <label id="sci">Science : </label>
+        <input id="inp5" type="number"><br><br>
+
+        <label id="soc">Social : </label>
+        <input id="inp6" type="number"><br><br>
+
+        <button onclick="save()">Submit</button>
+        <button onclick="view()">view</button>
+        <div id="d1"></div>
+
+
+</div>
+
+</body>
+
+<script>
+
+    let name = [];
+    let email = [];
+    let tamil = [];
+    let english =[];
+    let maths = [];
+    let sci = [];
+    let soc = [];
+    let overtotal = [];
+    let avg = [];
+    let grade = [];
+    let status = [];
+
+
+
+         var1 = document.getElementById("inp").value;
+         var2 = document.getElementById("inp1").value;
+         var3 = document.getElementById("inp2").value;
+         var4 = document.getElementById("inp3").value;
+         var5 = document.getElementById("inp4").value;
+         var6 = document.getElementById("inp5").value;
+         var7 = document.getElementById("inp6").value;
+
+         let total = parseInt(var3 + var4 + var5 + var6 + var7 );
+         let average = total/5;
+         let arun="";
+        
+    function con(){
+
+        
+        if(var3>=90 && var4>=90 && var5>=90 && var6>=90 && var7>=90){
+                
+            arun="A+";
+            
+        }
+
+            else if(var3<=39 || var4<=39 || var5<=39 || var6<=39 || var7<=39){
+                
+                arun=" E+ ";
+
+             }
+
+
+            else if(var3>=80 && var3<=90 || var4>=80 && var4<=90 || var5>=80 && var5<=90 || var6>=80 && var6<=90 || var7>=80 && var7<=90){
+                
+                arun=" A ";
+                
+
+            }
+            else if(var3<=80 && var3>=70 || var4<=80 && var4>=70 || var5<=80 && var5>=70 || var6<=80 && var6>=70 || var7<=80 && var7>=70){
+               
+                arun=" B+ ";
+
+
+             }
+            else if(var3<=70 && var3>=60 || var4<=70 && var4>=60 || var5<=70 && var5>=60 || var6<=70 && var6>=60 || var7<=70 && var7>=60){
+                
+                arun=" B ";
+                
+
+            }
+            else if(var3<=60 && var3>=50 || var4<=60 && var4>=50 || var5<=60 && var5>=50 || var6<=60 && var6>=50 || var7<=60 && var7>=50){
+                
+                arun=" C+ ";
+                
+
+            }
+            else if(var3<=50 && var3>=40 || var4<=50 && var4>=40 || var5<=50 && var5>=40 || var6<=50 && var6>=40 || var7<=50 && var7>=40 ){
+                
+                arun=" C ";
+                
+
+            }
+
+            grade.push(arun) ;
+
+            
+
+    }
+
+    now="";
+    i=0;
+    function pass(i){
+       
+        for(i=0; i<tamil.length; i++){
+            if(grade[i]==" E+ "){
+                now="Fail";
+            }
+            else{
+                now="Pass";
+            }
+            
+        }
+        status.push(now);
+    }
+
+    function edit(i){
+        for (i=0; i<tamil.length; i++){
+            document.getElementById("inp").value=name[i];
+            document.getElementById("inp1").value=email[i];
+            document.getElementById("inp2").value=tamil[i];
+            document.getElementById("inp3").value=english[i];
+            document.getElementById("inp4").value=maths[i];
+            document.getElementById("inp5").value=sci[i];
+            document.getElementById("inp6").value=soc[i];
+        }
+
+       
+             
+    }
+
+  
+
+    function update(i){
+        upvar1 = document.getElementById("inp").value;
+        upvar2 = document.getElementById("inp1").value;
+        upvar3 = document.getElementById("inp2").value;
+        upvar4 = document.getElementById("inp3").value;
+        upvar5 = document.getElementById("inp4").value;
+        upvar6 = document.getElementById("inp5").value;
+        upvar7 = document.getElementById("inp6").value;
+
+        uptot = parseInt(upvar3) + parseInt(upvar4) + parseInt(upvar5) + parseInt(upvar6) + parseInt(upvar7) ;
+        upavg = uptot/5;
+  
+
+        name.splice(i,1,upvar1);
+        email.splice(i,1,upvar2);
+        tamil.splice(i,1,upvar3);
+        english.splice(i,1,upvar4);
+        maths.splice(i,1,upvar5);
+        sci.splice(i,1,upvar6);
+        soc.splice(i,1,upvar7);
+        overtotal.splice(i,1,uptot);    
+        avg.splice(i,1,upavg);
+
+        upcon();
+        view()
+
+        
+    }
+
+function upcon(){
+
+        
+if(upvar3>=90 && upvar4>=90 && upvar5>=90 && upvar6>=90 && upvar7>=90){
+        
+    upgrade="A+";
+    
+}
+
+    else if(upvar3<=39 || upvar4<=39 || upvar5<=39 || upvar6<=39 || upvar7<=39){
+        
+        upgrade=" E+ ";
+
+     }
+
+
+    else if(upvar3>=80 && upvar3<=90 || upvar4>=80 && upvar4<=90 || upvar5>=80 && upvar5<=90 || upvar6>=80 && upvar6<=90 || upvar7>=80 && upvar7<=90){
+        
+        upgrade=" A ";
+        
+
+    }
+    else if(upvar3<=80 && upvar3>=70 || upvar4<=80 && upvar4>=70 || upvar5<=80 && upvar5>=70 || upvar6<=80 && upvar6>=70 || upvar7<=80 && upvar7>=70){
+       
+        upgrade=" B+ ";
+
+
+     }
+    else if(upvar3<=70 && upvar3>=60 || upvar4<=70 && upvar4>=60 || upvar5<=70 && upvar5>=60 || upvar6<=70 && upvar6>=60 || upvar7<=70 && upvar7>=60){
+        
+        upgrade=" B ";
+        
+
+    }
+    else if(upvar3<=60 && upvar3>=50 || upvar4<=60 && upvar4>=50 || upvar5<=60 && upvar5>=50 || upvar6<=60 && upvar6>=50 || upvar7<=60 && upvar7>=50){
+        
+        upgrade=" C+ ";
+        
+
+    }
+    else if(upvar3<=50 && upvar3>=40 || upvar4<=50 && upvar4>=40 || upvar5<=50 && upvar5>=40 || upvar6<=50 && upvar6>=40 || upvar7<=50 && upvar7>=40 ){
+        
+        upgrade=" C ";
+        
+
+    }
+
+    grade.splice(0,1)
+    grade.push(upgrade);
+
+    upstatus();
+
+}
+
+
+    function upstatus(){
+        if(upgrade==" E+ "){
+            change="Fail";
+        }else{
+            change="Pass"
+        }
+
+        status.splice(0,1);
+        status.push(change);
+        upSave();
+    }
+
+
+
+
+    function  store(){
+
+        var1 = document.getElementById("inp").value;
+         var2 = document.getElementById("inp1").value;
+         var3 = document.getElementById("inp2").value;
+         var4 = document.getElementById("inp3").value;
+         var5 = document.getElementById("inp4").value;
+         var6 = document.getElementById("inp5").value;
+         var7 = document.getElementById("inp6").value;
+
+         let total = parseInt(var3) + parseInt(var4) + parseInt(var5) + parseInt(var6) + parseInt(var7);
+         let average = total/5;
+
+        name.push(var1);
+        email.push(var2); 
+        tamil.push(var3);
+        english.push(var4);
+        maths.push(var5);
+        sci.push(var6);
+        soc.push(var7);
+        overtotal.push(total);
+        avg.push(average);
+        
+        
+        con();
+        pass();
+        
+
+
+    }
+
+    function view(){
+
+         
+
+         let text ="<table border=1><thead><th>"+"SI.NO"+"</th><th>"+"Name"+"</th><th>"+"Email"+"</th><th>"+"Tamil"+
+                "</th><th>"+"English"+"</th><th>"+"Maths"+"</th><th>"+"Science"+"</th><th>"+"Social"+"</th><th>"+
+                    "Total"+"</th><th>"+"Average"+"</th><th>"+"Grade"+"</th><th>"+"Result"+"</th><th>"+"Action"+
+                        "</th></thead><tbody>";
+
+
+        for(i=0; i<tamil.length; i++){
+            text+="<tr><td>"+(i+1)+"</td><td>"+name[i]+"</td><td>"+email[i]+"</td><td>"+tamil[i]+
+                            "</td><td>"+english[i]+"</td><td>"+maths[i]+"</td><td>"+sci[i]+"</td><td>"+soc[i]+
+                                "</td><td>"+overtotal[i]+"</td><td>"+avg[i]+"</td><td>"+grade[i]+"</td><td>"+status[i]+
+                                    "</td><td><button onclick='edit("+i+")'>"+"edit"+"</button><br><button onclick='update("+i+")'>"+"Update"+
+                                        "</button><br><button onclick='del("+i+")'>"+"Delete"+"</button></td></tr>";
+
+                                }
+
+                                text+="</tbody></table>"
+
+                    document.getElementById("d1").innerHTML = text;
+    }
+
+    function upSave(){
+
+    
+        
+
+        document.getElementById("inp").value="";
+        document.getElementById("inp1").value="";
+        document.getElementById("inp2").value="";
+        document.getElementById("inp3").value="";
+        document.getElementById("inp4").value="";
+        document.getElementById("inp5").value="";
+        document.getElementById("inp6").value="";
+
+        
+        
+
+
+    }
+    
+    function save(){
+
+       store();
+        
+ 
+        document.getElementById("inp").value="";
+        document.getElementById("inp1").value="";
+        document.getElementById("inp2").value="";
+        document.getElementById("inp3").value="";
+        document.getElementById("inp4").value="";
+        document.getElementById("inp5").value="";
+        document.getElementById("inp6").value="";
+
+        
+        
+
+
+    }
+
+    function del(i){
+        name.splice(i,1);
+        email.splice(i,1);
+        tamil.splice(i,1);
+        english.splice(i,1);
+        maths.splice(i,1);
+        sci.splice(i,1);
+        soc.splice(i,1);
+        overtotal.splice(i,1);
+        avg.splice(i,1);
+        grade.splice(i,1);
+        status.splice(i,1);
+        view();
+
+        upvar1.splice(i,1);
+        upvar2.splice(i,1);
+        upvar3.splice(i,1);
+        upvar4.splice(i,1);
+        upvar5.splice(i,1);
+        upvar6.splice(i,1);
+        upvar7.splice(i,1);
+        uptot.splice(i,1);
+        upavg.splice(i,1);
+
+
+
+        view();
+    
+    }
+
+
+
+</script>
+
+</html> 
