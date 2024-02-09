@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+<body>
+    <input type="text" id="inp1" placeholder="Enter a number" required> 
+    <button type="button" onclick="palindrome()">Click</button>
+    <div id="d1"></div>
+    <div id="d2"></div>
+</body>
+<script>
+    function palindrome(){
+        var1=document.getElementById("inp1").value;
+        var2=var1.length;
+
+        text="";
+        for(i=var2-1; i>=0 ; i--){
+            text+=var1[i];
+            if(var1==text){
+                arun="This is a palindrome number"
+            }
+            else{
+                arun="This is not a palindrome number."
+            }
+            
+        }
+
+        document.getElementById("d1").innerHTML=text;
+        document.getElementById("d2").innerHTML=arun;
+    }
+</script>
+</html>     
