@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listing the given element</title>
+</head>
+<body>
+    <input type="text" id="inp" placeholder="Enter fruits">
+    <button onclick="fun()">Click</button>
+
+    <ol id="d1"></ol>
+</body>
+
+<script>
+
+array = [];
+
+    function fun(){
+        let var1 = document.getElementById("inp").value;    
+
+    
+        array.push(var1);
+        disp()
+           
+    }
+
+    function disp(){
+
+    text="";
+            for(i=0; i<array.length; i++){
+                text+="<li>" + array[i] + "<button onclick='del("+i+")'>"+"delete"+ "</button>" + "</li>";
+                document.getElementById("inp").value="";
+                // text+="<br>"
+            }
+            document.getElementById("d1").innerHTML = text;
+
+    }
+
+
+    function del(i){
+        array.splice(i,1);
+        disp();
+        
+    }
+
+
+
+
+    // var button = document.createElement("button");
+// button.innerHTML="delete";
+// button.id="myButton";
+
+// if(var1.trim() !== ''){
+
+//     const li = document.createElement('li');
+//     li.textContent = var1;
+//     list.appendChild(li);
+
+//     document.getElementById("inp").value = '';
+// }
+</script>
+
+</html>
