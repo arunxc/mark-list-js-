@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fibonacci series</title>
+</head>
+<body>
+    <input type="number" id="inp1" placeholder="Enter a number">
+    <button onclick="fibonacci()">Click</button>
+    <div id="d1"></div>
+</body>
+<script>
+    function fibonacci(){
+        var1=document.getElementById("inp1").value;
+
+        var n1=0,n2=1,next;
+
+        for(i=1; i<=var1; i++){
+           document.getElementById("d1").innerHTML+=n1 + "<br>";
+           next=n1+n2;
+           n1=n2;
+           n2=next;
+        }
+       
+    }
+</script>
+</html>
