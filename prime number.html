@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number</title>
+</head>
+<body>
+    <form action="">
+        <input type="number" id="input" placeholder="Enter a number">
+        <button type="button" onclick="prime()">Click</button>
+    </form>
+    <div id="d1"></div>
+</body>
+<script>
+    function prime(){
+        var1 = document.getElementById("input").value;
+        num=""
+        text="";
+        isPrime = true;
+        if(var1==1){
+            num="1 is neither prime nor composite number"
+        }
+        else if(var1>1){
+            for(i=2; i<var1; i++){
+                if(var1 % i == 0){
+                isPrime = false;
+                break;
+                }
+            }
+
+            if(isPrime){
+                num="The given number " + var1 + " is a prime number."
+                }
+                else{
+                    num="The given number " + var1 + " is not a prime number."
+                }
+             
+        }
+        else{
+            num="The given number is not a prime number.."
+        }
+        document.getElementById("d1").innerHTML=num;
+    }
+</script>
+</html>
