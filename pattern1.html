@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="num" placeholder="Enter a number">
+    <div id="d1"></div>
+    <button type="button" onclick="fun()">Click</button>
+</body>
+
+
+<script>
+    function fun(){
+        var1=document.getElementById("num").value;
+
+        text="";
+        for(i=1; i<=var1; i++){
+            for(j=1; j<=var1; j++){
+                if(j<=i){
+                    text+=j;
+                }
+                else{
+                    text+="*";
+                }
+                
+            }
+            text+="<br>";
+        }
+        document.getElementById("d1").innerHTML=text;
+    }
+</script>
+</html>
