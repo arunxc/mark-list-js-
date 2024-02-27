@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluate</title>
+    <link rel="stylesheet" href="calcltr.css">
+</head>
+<body>
+<div class="cal">
+    <input type="text" name="" id="screen"><br>
+    <button onclick="one()">1</button>
+    <button onclick="two()">2</button>cc
+    <button onclick="three()">3</button>
+    <button onclick="cl()">AC</button><br>
+
+    <button onclick="four()">4</button>
+    <button onclick="five()">5</button>
+    <button onclick="six()">6</button>
+    <button onclick="div()">/</button><br>
+
+    <button onclick="seven()">7</button>
+    <button onclick="eight()">8</button>
+    <button onclick="nine()">9</button>
+    <button onclick="zero()">0</button><br>
+
+    <button onclick="multi()">*</button>
+    <button onclick="add()">+</button>
+    <button onclick="sub()">-</button>
+    <button onclick="equal()">=</button>
+
+</div>
+
+</body>
+<script>
+
+    
+    let var1 = "1";
+    let var2 = "2";
+    let var3 = "3";
+    let var4 = "4";
+    let var5 = "5";
+    let var6 = "6";
+    let var7 = "7";
+    let var8 = "8";
+    let var9 = "9";
+    let var0 = "0";
+
+    let varAd = "+";
+    let varSub = "-";
+    let varMul = "*";
+    let varDiv = "/";
+    let varClear = "";
+
+
+
+    function one(){
+        document.getElementById("screen").value += var1;
+    }
+
+    function two(){
+        document.getElementById("screen").value += var2;
+    }
+
+    function three(){
+        document.getElementById("screen").value += var3;
+    }
+
+    function four(){
+        document.getElementById("screen").value += var4;
+    }
+
+    function five(){
+        document.getElementById("screen").value += var5;
+    }
+
+    function six(){
+        document.getElementById("screen").value += var6;
+    }
+
+    function seven(){
+        document.getElementById("screen").value += var7;
+    }
+
+    function eight(){
+        document.getElementById("screen").value += var8;
+    }
+
+    function nine(){
+        document.getElementById("screen").value += var9;
+    }
+
+    function zero(){
+        document.getElementById("screen").value += var0;
+    }
+    
+    function add(){
+        document.getElementById("screen").value += varAd;
+    }
+
+
+    function cl(){
+        
+        document.getElementById("screen").value = varClear;
+       
+    }
+
+
+    function sub(){
+        document.getElementById("screen").value += varSub;
+    }
+
+    function multi(){
+        document.getElementById("screen").value += varMul;
+    }
+
+    function div(){
+        document.getElementById("screen").value += varDiv;
+    }
+
+    function equal(){
+        let varEq = document.getElementById("screen").value;
+
+
+        let varsee =  eval(varEq);
+
+        document.getElementById("screen").value = varsee;
+    }
+
+    
+</script>
+
+</html>
