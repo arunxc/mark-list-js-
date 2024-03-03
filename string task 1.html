@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task1</title>
+</head>
+<body>
+    <input type="text" id="inp1">
+    <button type="button" onclick="arun()">Click Me</button>
+    <div id="d"></div>
+    <div id="d1"></div>
+</body>
+
+<script>
+    function arun(){
+        // let text= "I like apple";
+        var1=document.getElementById("inp1").value;
+        document.getElementById("d").innerHTML="Text : " + var1;
+
+        document.getElementById("d1").innerHTML="Replaced text : " + var1.replace("apple","banana")
+    }
+</script>
+
+</html>
