@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deleting an array</title>
+</head>
+<body>
+    <input type="number" id="inp" placeholder="Enter the index"> 
+    <button onclick="fun()">Click</button>
+
+    <h4 id="d"></h4>
+    <h4 id="d1"></h4>
+</body>
+
+ <script>
+    function fun(){
+        let a = ["Mango","Orange","Banana"];
+        document.getElementById("d").innerHTML ="The array is : " + a;
+
+        var1 = document.getElementById("inp").value;
+        a.splice(var1,1);
+        // a.pop();
+        // delete a[var1];
+        document.getElementById("d1").innerHTML ="The array after deleting an element is : " + a;
+    }
+ </script>
+
+</html>
