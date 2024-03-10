@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prime</title>
+</head>
+<body>
+    <input type="number" name="" id="inp1">
+    <br><button onclick="fun()">Click</button>
+
+    <div id="d1"></div>
+</body>
+<script>
+    function fun(){
+        var1 = document.getElementById("inp1").value;
+        isPrime = true ; 
+        arun="";
+
+        if(var1 == 1){
+            arun = "1 is neither prime nor composite number"
+        }
+
+        else if(var1>1){
+            for(i=2 ; i<var1 ; i++){
+                if(var1 % i==0){
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime){
+                arun = "The number "+ var1 + " is a prime number"
+            }
+            else{
+                arun = "The number "+ var1 + " is not a prime number"
+            }
+        }
+
+        else{
+            arun = "The number "+ var1 + " is not a prime number"
+        }
+
+        document.getElementById("d1").innerHTML = arun;
+    }
+</script>
+</html>
