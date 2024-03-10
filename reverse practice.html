@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reverse</title>
+</head>
+<body>
+    <input type="number" id="inp1">
+    <br><br><button onclick="fun()">Click</button>
+
+    <div id="d1"></div>
+</body>
+<script>
+    function fun(){
+        var1 = document.getElementById("inp1").value;
+        var2 = var1.length;
+
+        arun = "";
+
+        for(i=1; i<=var2; i++){
+            arun += var1[var2-i];
+        }
+
+        document.getElementById("d1").innerHTML=arun;
+    }
+</script>
+</html>
